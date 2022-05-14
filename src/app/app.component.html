@@ -1,0 +1,72 @@
+
+<div class="container">
+  <div style="margin: 20px">
+
+<mat-toolbar color="primary" >
+  <mat-toolbar-row>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon notifications-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <mat-form-field appearance="standard">
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+ 
+    <!-- <mat-card *ngFor="let data of obs | async">
+      <mat-icon mat-card-avatar>account_circle</mat-icon>
+      <mat-card-subtitle>ID:{{data.Id}}</mat-card-subtitle>
+      <mat-card-title><h4>{{data.Name}}</h4></mat-card-title>
+      <mat-card-content><h4>{{data.ItemCategory}}</h4></mat-card-content>
+      <mat-card-actions align="end">
+         <button mat-raised-button color="primary" (click)="priceDetailsDialog()">View Price Details</button> 
+         </mat-card-actions>
+    </mat-card> -->
+
+
+<mat-grid-list cols="6" rowHeight="30px" *ngFor="let data of obs | async">
+  <mat-grid-tile 
+   [colspan] = "1"
+   [rowspan] = "2"> <mat-icon class="customIconSize">account_circle</mat-icon>
+   </mat-grid-tile>
+   <mat-grid-tile  style="text-align: left;" 
+   [colspan] = "3"
+   [rowspan] = "1"><div class="text-inside-grid">{{ data.Name }}</div>
+   </mat-grid-tile>
+   <mat-grid-tile 
+   [colspan] = "1"
+   [rowspan] = "2"> {{data.DefaultPriceConcessionName}} 
+   </mat-grid-tile>
+   <mat-grid-tile 
+   [colspan] = "1"
+   [rowspan] = "2">  <button mat-raised-button color="primary" (click)="priceDetailsDialog()">View Price Details</button>
+   </mat-grid-tile>
+   <mat-grid-tile  style="color:red;" 
+   [colspan] = "3"
+   [rowspan] = "1"><div class="text-inside-grid" >{{ data.ItemCategory }}</div>
+   </mat-grid-tile>
+
+
+</mat-grid-list>
+
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>

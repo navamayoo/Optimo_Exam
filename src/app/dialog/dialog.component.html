@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon notifications-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-card >
+
+    <!-- <mat-card-title>{{ this._data }}</mat-card-title> -->
+    <mat-card-content><h4>{{ this._data }}</h4></mat-card-content>
+
+  </mat-card>
+
+  <div class="container">
+    <div style="margin: 20px">
+
+   
+       
+  <!-- <mat-grid-list cols="3" rowHeight="30px" *ngFor="let data of obs | async"> -->
+
+    <mat-grid-list cols="3" rowHeight="30px">
+
+    <mat-card> {{this._weekend}}
+        <mat-grid-tile 
+        [colspan] = "1"
+        [rowspan] = "1"> sssss
+        </mat-grid-tile>
+        <mat-grid-tile 
+        [colspan] = "1"
+        [rowspan] = "1"> ssss
+        </mat-grid-tile>
+        <mat-grid-tile 
+        [colspan] = "1"
+        [rowspan] = "1"> ssssss
+        </mat-grid-tile>
+            
+    </mat-card>
+
+  
+  
+  </mat-grid-list>
+  </div>
+  </div>
+
